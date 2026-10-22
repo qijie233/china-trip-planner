@@ -11,7 +11,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import amap_client
+import amap_client  # noqa: E402
+
+try:  # Windows 控制台默认 cp1252，中文会炸，这里兜一下
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:  # noqa: BLE001, S110
+    pass
 
 FAILED: list[str] = []
 
