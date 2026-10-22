@@ -11,7 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import amap_client  # noqa: E402
+import amap_client
 
 try:  # Windows 控制台默认 cp1252，中文会炸，这里兜一下
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
