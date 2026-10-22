@@ -1,0 +1,40 @@
+{
+  "_comment": "trip-planner 的假设参数。都可以按本地实际修改；打车/自驾不是实时报价，只是按这些规则估算。",
+  "access": {
+    "origin": {"minutes": 30, "cost": 30},
+    "destination": {"minutes": 30, "cost": 30}
+  },
+  "taxi": {
+    "detour_factor": 1.4,
+    "city_speed_kmh": 26,
+    "intercity_speed_kmh": 55,
+    "intercity_threshold_km": 30,
+    "long_trip_threshold_km": 120,
+    "long_speed_kmh": 80,
+    "pickup_min": 5,
+    "default": {"base_fare": 13, "base_km": 3, "per_km": 2.6, "min_fare": 13},
+    "cities": {
+      "南京": {"base_fare": 11, "base_km": 3, "per_km": 2.4, "min_fare": 11},
+      "上海": {"base_fare": 14, "base_km": 3, "per_km": 2.5, "min_fare": 14},
+      "苏州": {"base_fare": 13, "base_km": 3, "per_km": 2.5, "min_fare": 13},
+      "无锡": {"base_fare": 10, "base_km": 3, "per_km": 2.3, "min_fare": 10},
+      "徐州": {"base_fare": 8, "base_km": 3, "per_km": 2.0, "min_fare": 8},
+      "镇江": {"base_fare": 9, "base_km": 3, "per_km": 2.2, "min_fare": 9}
+    }
+  },
+  "drive": {
+    "fuel_cost_per_km": 0.6,
+    "toll_per_km": 0.5,
+    "highway_ratio": 0.8
+  },
+  "walk": {
+    "speed_kmh": 4.8,
+    "detour_factor": 1.25,
+    "max_km": 5
+  },
+  "transit": {
+    "_comment": "有高德 Key 时全部走高德公交路径规划；这里只放策略默认值",
+    "strategy": 0,
+    "max_plans": 1
+  }
+}

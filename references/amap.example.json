@@ -1,0 +1,4 @@
+{
+  "_comment": "把本文件复制成 references/amap.json，填入你自己的高德「Web服务」Key。amap.json 已在 .gitignore 里，不会入库。",
+  "key": "PUT_YOUR_AMAP_KEY_HERE"
+}

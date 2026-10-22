@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trip-planner-skill"
+version = "0.2.0"
+description = "比较 A→B 的出行方式：铁路（12306）+ 高德公共交通/打车/自驾/步行，算门到门时间与费用"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "祈杰", email = "120245337+qijie233@users.noreply.github.com" }]
+keywords = ["skill", "travel", "railway", "amap", "12306", "china"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://github.com/qijie233/china-trip-planner"
+Issues = "https://github.com/qijie233/china-trip-planner/issues"
+
+[project.scripts]
+trip-planner = "trip_planner:main"
+
+[tool.setuptools]
+py-modules = ["trip_planner", "amap_client"]
+
+[tool.ruff]
+line-length = 110  # 中文注释/帮助文本按字符计，100 太紧
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "BLE", "RUF", "PLW", "S"]
+ignore = [
+    "S101",    # 测试里大量 assert
+    "RUF001",  # 中文全角标点（：，（））不算歧义字符
+    "RUF002",
+    "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "PLR2004"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# 高德 Key 只放本机，绝不入库
+references/amap.json
+
+# 本地查询缓存/临时文件
+*.log
+_tmp/

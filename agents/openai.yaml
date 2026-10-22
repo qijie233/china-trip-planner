@@ -1,0 +1,4 @@
+interface:
+  display_name: "出行方式对比"
+  short_description: "比较 A→B 的铁路（含中转）、公共交通（公交/地铁+步行段）、打车、自驾、步行的时间与费用。"
+  default_prompt: "使用 trip-planner skill：先确认 A/B（城市名时先列出候选车站让主人选）、坐标与城市、乘车日期、接驳方式（默认 --access auto 用高德公交规划）和偏好（最早到/最便宜/综合）；确认高德 Web 服务 Key 可用（--detect），没有 Key 就说明公交/打车/步行只能估算；调用 scripts/trip_planner.py 计算，汇报推荐方案、对比表、公共交通逐段明细（含步行距离与时长）、假设与可信度（铁路实测、公交高德实测、打车为高德出租车估价），不要代下单。"
